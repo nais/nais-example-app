@@ -1,4 +1,4 @@
-package no.nav.foreldrepenger.front;
+package no.nav.nais.example;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

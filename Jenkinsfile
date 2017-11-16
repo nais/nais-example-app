@@ -4,8 +4,8 @@ import deploy
 def deployLib = new deploy()
 
 node {
-    def repo = "apus"
-    def application = "hello-apus"
+    def repo = "nais/nais-example-app"
+    def application = "nais-example-app"
     def committer, committerEmail, changelog, pom, releaseVersion, isSnapshot, nextVersion // metadata
     def mvnHome = tool "maven-3.3.9"
     def mvn = "${mvnHome}/bin/mvn"
@@ -20,7 +20,7 @@ node {
     //try {
 
     stage("checkout") {
-        git url: "ssh://git@stash.devillo.no:7999/${repo}/${application}.git"
+        git url: "ssh://git@github.com:nais/nais-example-app.git/${repo}/${application}.git"
     }
 
     stage("initialize") {

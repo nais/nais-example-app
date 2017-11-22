@@ -1,12 +1,7 @@
-FROM openjdk
-
-ENV LC_ALL="no_NB.UTF-8"
-ENV LANG="no_NB.UTF-8"
-ENV TZ="Europe/Oslo"
-ENV DEFAULT_JAVA_OPTS="-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
-
-EXPOSE 8080
+FROM busybox
 
 ARG JAR_FILE
-ADD target/${JAR_FILE}  app.jar
-ENTRYPOINT exec java -jar /app.jar
+COPY target/${JAR_FILE} /app.jar
+
+FROM navikt/java:8
+COPY --from=0 /app.jar .

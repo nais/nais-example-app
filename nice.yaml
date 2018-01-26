@@ -17,11 +17,11 @@ healthcheck:
       path: rest/internal/isAlive
 resources:
     limits:
-      cpu: 1500m
-      memory: 3072Mi
+      cpu: 1
+      memory: 1024Mi
     requests:
-      cpu: 1000m
-      memory: 1536Mi
+      cpu: 100m
+      memory: 256Mi
 fasitResources:
   used:
   exposed:
